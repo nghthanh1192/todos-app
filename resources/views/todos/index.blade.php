@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>To do page</h1>
+    <ul>
+        @foreach ($todos as $todo)
+            <li>{{ $todo->name }}</li>   
+        @endforeach
+    </ul>    
 </body>
 </html>
