@@ -18,8 +18,10 @@ Todo List
             @foreach($todos as $todo)
               <li class="list-group-item">
                 {{ $todo->name }}
-
-              <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">View</a>
+                @if (!$todo->completed)
+                <a href="/todos/{{ $todo->id }}/complete" class="btn btn btn-warning float-right text-light">Complete Todo</a>
+                @endif
+                <a href="/todos/{{ $todo->id }}" class="btn btn-primary float-right mr-2">View</a>
               </li>
             @endforeach
           </ul>
